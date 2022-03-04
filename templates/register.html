@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='assets/img/logo.png')}}">
+        <meta charset="ut-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Scikit Online Exam Platform</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static',filename='assets/style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.11/css/mdb.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="header" id="particles-js">
+            <nav>
+                <a href="#"><img src="{{ url_for('static',filename='assets/img/logo.png')}}"></a>
+
+                    <div class="regbox">
+                        <div class="regform"><h1>Registration</h1></div>
+                         <img src="{{ url_for('static',filename='assets/img/avatar.png')}}" class="avatar">
+
+                        <form action="/register" method="POST" autocomplete="off">
+
+                                <p >Name</p>
+                                <input class="name" type="text" name="name" id="name" placeholder="Enter your name" required><br>
+                            <p>Username</p>
+                                <input class="uname" type="text" name="uname" id="uname" placeholder="Enter username" required><br>
+                            <p>College</p>
+                            <select class="option" name="college" id="college" required>
+                                <option disabled="disabled" selected="selected">--Choose Option</option>
+                                <option>Amal Jyothi College of Engineering Kottayam</option>
+                                <option>Amity Business Schools Kochi</option>
+                                <option>Bishop Jerome Institute Kochi</option>
+
+                                <option>Cochin University of Science and Technology</option>
+
+                                <option>DCSMAT Business School</option>
+
+                                <option>IIM Kochi</option>
+
+                                <option>IIM Kozhikode</option>
+
+                                <option>Indian institute of Logistics</option>
+
+                                <option>Rajagiri Centre for Business Studeis Kollam</option>
+                                <option>Travancore Business Acadamy, Kollam</option>
+                                <option>TKM Institute of Management</option>
+                                <option>UEI Global</option>
+                                <option>Kerala Institute of Design Kochi</option>
+                                <option>Vimal Jyothi college of Engineering</option>
+
+
+
+                            </select>                             <p >Email</p>
+                            <input class="email" type="email" name="email" id="email"placeholder="Enter your Email id" required>
+                            <p>Phone</p>
+                            <input class="phone" type="text" name="phone" id="phone"placeholder="Enter phone number" required>
+                            <p>Department</p>
+                            <select class="option" name="designation" id="designation" required>
+                                <option disabled="disabled" selected="selected">--Choose Option</option>
+                                <option>MCA</option>
+                                <option>BTECH</option>
+                                <option>MTECH</option>
+
+                            </select>
+
+                             <p>Password</p>
+                            <input class="passwd" type="password" name="passwd" id="passwd"placeholder="Enter your password" required>
+                             <p>Confirm password</p>
+                            <input class="cpasswd" type="password" name="cpasswd" id="cpasswd" placeholder="Confirm your password" required>
+
+                            <input type="submit" name="just-register" id="just-register" value="REGISTER" class="btn btn-full" onclick="checkPassword()">
+
+                            <a href="{{ url_for('admindash')}}"> Go back to dashboard</a>
+
+                        </form>
+                        </div>
+                    </div>
+
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+
+            </nav>
+        </section>
+
+           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static',filename='assets/js/particles.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/app.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/vanilla-tilt.min.js') }}"></script>
+        <script>
+            VanillaTilt.init(document.querySelectorAll(".box"),{
+                max:25,
+                speed:400
+            });
+        </script>
+        <script>
+            function checkPassword(){
+    let password = document.getElementById("passwd").value;
+    let cnfrmPassword = document.getElementById("cpasswd").value;
+    let message = document.getElementById("message");
+    console.log(" Password:", password,'\n',"Confirm Password:",cnfrmPassword);
+
+    if(password.length != 0){
+        if(password == cnfrmPassword) {
+             message.textContent = "registering";
+            message.style.backgroundColor = "#ff4d4d";
+        }
+        else
+        {
+            message.textContent = "Sorry, Password don't match";
+            message.style.backgroundColor = "#ff4d4d";
+        }
+    }
+    else{
+        alert("Password can't be empty!");
+        message.textContent = "Please enter your password";
+    }
+}
+        </script>
+        <!--footer-->
+        <section class="footer-space" id="footer-space">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                         <ul>
+                            <li><a href="www.donisabk-aim.web.app">Donis Abraham</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get Help</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Email</h4>
+                         <ul>
+                            <li><a href="#">donisabk@gmail.com</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </footer>
+       </section>
+
+    </body>
+</html>
